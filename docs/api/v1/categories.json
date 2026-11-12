@@ -1,0 +1,366 @@
+[
+  {
+    "name": "Animals",
+    "slug": "animals",
+    "count": 23,
+    "nokey": 20,
+    "path": "/api/v1/category/animals.json"
+  },
+  {
+    "name": "Anime",
+    "slug": "anime",
+    "count": 20,
+    "nokey": 11,
+    "path": "/api/v1/category/anime.json"
+  },
+  {
+    "name": "Anti-Malware",
+    "slug": "anti-malware",
+    "count": 17,
+    "nokey": 3,
+    "path": "/api/v1/category/anti-malware.json"
+  },
+  {
+    "name": "Art & Design",
+    "slug": "art-design",
+    "count": 33,
+    "nokey": 20,
+    "path": "/api/v1/category/art-design.json"
+  },
+  {
+    "name": "Authentication & Authorization",
+    "slug": "authentication-authorization",
+    "count": 6,
+    "nokey": 0,
+    "path": "/api/v1/category/authentication-authorization.json"
+  },
+  {
+    "name": "Blockchain",
+    "slug": "blockchain",
+    "count": 19,
+    "nokey": 10,
+    "path": "/api/v1/category/blockchain.json"
+  },
+  {
+    "name": "Books",
+    "slug": "books",
+    "count": 28,
+    "nokey": 22,
+    "path": "/api/v1/category/books.json"
+  },
+  {
+    "name": "Business",
+    "slug": "business",
+    "count": 53,
+    "nokey": 17,
+    "path": "/api/v1/category/business.json"
+  },
+  {
+    "name": "Calendar",
+    "slug": "calendar",
+    "count": 22,
+    "nokey": 16,
+    "path": "/api/v1/category/calendar.json"
+  },
+  {
+    "name": "Cloud Storage & File Sharing",
+    "slug": "cloud-storage-file-sharing",
+    "count": 20,
+    "nokey": 5,
+    "path": "/api/v1/category/cloud-storage-file-sharing.json"
+  },
+  {
+    "name": "Continuous Integration",
+    "slug": "continuous-integration",
+    "count": 6,
+    "nokey": 0,
+    "path": "/api/v1/category/continuous-integration.json"
+  },
+  {
+    "name": "Cryptocurrency",
+    "slug": "cryptocurrency",
+    "count": 104,
+    "nokey": 48,
+    "path": "/api/v1/category/cryptocurrency.json"
+  },
+  {
+    "name": "Currency Exchange",
+    "slug": "currency-exchange",
+    "count": 32,
+    "nokey": 17,
+    "path": "/api/v1/category/currency-exchange.json"
+  },
+  {
+    "name": "Data Validation",
+    "slug": "data-validation",
+    "count": 16,
+    "nokey": 1,
+    "path": "/api/v1/category/data-validation.json"
+  },
+  {
+    "name": "Development",
+    "slug": "development",
+    "count": 236,
+    "nokey": 119,
+    "path": "/api/v1/category/development.json"
+  },
+  {
+    "name": "Dictionaries",
+    "slug": "dictionaries",
+    "count": 16,
+    "nokey": 8,
+    "path": "/api/v1/category/dictionaries.json"
+  },
+  {
+    "name": "Documents & Productivity",
+    "slug": "documents-productivity",
+    "count": 61,
+    "nokey": 6,
+    "path": "/api/v1/category/documents-productivity.json"
+  },
+  {
+    "name": "Email",
+    "slug": "email",
+    "count": 45,
+    "nokey": 15,
+    "path": "/api/v1/category/email.json"
+  },
+  {
+    "name": "Entertainment",
+    "slug": "entertainment",
+    "count": 19,
+    "nokey": 17,
+    "path": "/api/v1/category/entertainment.json"
+  },
+  {
+    "name": "Environment",
+    "slug": "environment",
+    "count": 34,
+    "nokey": 19,
+    "path": "/api/v1/category/environment.json"
+  },
+  {
+    "name": "Events",
+    "slug": "events",
+    "count": 6,
+    "nokey": 2,
+    "path": "/api/v1/category/events.json"
+  },
+  {
+    "name": "Finance",
+    "slug": "finance",
+    "count": 108,
+    "nokey": 40,
+    "path": "/api/v1/category/finance.json"
+  },
+  {
+    "name": "Food & Drink",
+    "slug": "food-drink",
+    "count": 36,
+    "nokey": 17,
+    "path": "/api/v1/category/food-drink.json"
+  },
+  {
+    "name": "Games & Comics",
+    "slug": "games-comics",
+    "count": 112,
+    "nokey": 76,
+    "path": "/api/v1/category/games-comics.json"
+  },
+  {
+    "name": "Geocoding",
+    "slug": "geocoding",
+    "count": 118,
+    "nokey": 58,
+    "path": "/api/v1/category/geocoding.json"
+  },
+  {
+    "name": "Government",
+    "slug": "government",
+    "count": 137,
+    "nokey": 100,
+    "path": "/api/v1/category/government.json"
+  },
+  {
+    "name": "Health",
+    "slug": "health",
+    "count": 51,
+    "nokey": 35,
+    "path": "/api/v1/category/health.json"
+  },
+  {
+    "name": "Jobs",
+    "slug": "jobs",
+    "count": 44,
+    "nokey": 15,
+    "path": "/api/v1/category/jobs.json"
+  },
+  {
+    "name": "MCP Servers",
+    "slug": "mcp-servers",
+    "count": 44,
+    "nokey": 27,
+    "path": "/api/v1/category/mcp-servers.json"
+  },
+  {
+    "name": "Machine Learning",
+    "slug": "machine-learning",
+    "count": 58,
+    "nokey": 13,
+    "path": "/api/v1/category/machine-learning.json"
+  },
+  {
+    "name": "Music",
+    "slug": "music",
+    "count": 37,
+    "nokey": 12,
+    "path": "/api/v1/category/music.json"
+  },
+  {
+    "name": "News",
+    "slug": "news",
+    "count": 26,
+    "nokey": 7,
+    "path": "/api/v1/category/news.json"
+  },
+  {
+    "name": "Open Data",
+    "slug": "open-data",
+    "count": 91,
+    "nokey": 65,
+    "path": "/api/v1/category/open-data.json"
+  },
+  {
+    "name": "Open Source Projects",
+    "slug": "open-source-projects",
+    "count": 11,
+    "nokey": 9,
+    "path": "/api/v1/category/open-source-projects.json"
+  },
+  {
+    "name": "Patent",
+    "slug": "patent",
+    "count": 5,
+    "nokey": 2,
+    "path": "/api/v1/category/patent.json"
+  },
+  {
+    "name": "Personality",
+    "slug": "personality",
+    "count": 28,
+    "nokey": 22,
+    "path": "/api/v1/category/personality.json"
+  },
+  {
+    "name": "Phone",
+    "slug": "phone",
+    "count": 9,
+    "nokey": 1,
+    "path": "/api/v1/category/phone.json"
+  },
+  {
+    "name": "Photography",
+    "slug": "photography",
+    "count": 39,
+    "nokey": 10,
+    "path": "/api/v1/category/photography.json"
+  },
+  {
+    "name": "Programming",
+    "slug": "programming",
+    "count": 6,
+    "nokey": 1,
+    "path": "/api/v1/category/programming.json"
+  },
+  {
+    "name": "Science & Math",
+    "slug": "science-math",
+    "count": 60,
+    "nokey": 53,
+    "path": "/api/v1/category/science-math.json"
+  },
+  {
+    "name": "Security",
+    "slug": "security",
+    "count": 65,
+    "nokey": 26,
+    "path": "/api/v1/category/security.json"
+  },
+  {
+    "name": "Shopping",
+    "slug": "shopping",
+    "count": 35,
+    "nokey": 10,
+    "path": "/api/v1/category/shopping.json"
+  },
+  {
+    "name": "Social",
+    "slug": "social",
+    "count": 61,
+    "nokey": 10,
+    "path": "/api/v1/category/social.json"
+  },
+  {
+    "name": "Sports & Fitness",
+    "slug": "sports-fitness",
+    "count": 74,
+    "nokey": 31,
+    "path": "/api/v1/category/sports-fitness.json"
+  },
+  {
+    "name": "Test Data",
+    "slug": "test-data",
+    "count": 37,
+    "nokey": 31,
+    "path": "/api/v1/category/test-data.json"
+  },
+  {
+    "name": "Text Analysis",
+    "slug": "text-analysis",
+    "count": 20,
+    "nokey": 1,
+    "path": "/api/v1/category/text-analysis.json"
+  },
+  {
+    "name": "Tracking",
+    "slug": "tracking",
+    "count": 11,
+    "nokey": 3,
+    "path": "/api/v1/category/tracking.json"
+  },
+  {
+    "name": "Transportation",
+    "slug": "transportation",
+    "count": 101,
+    "nokey": 49,
+    "path": "/api/v1/category/transportation.json"
+  },
+  {
+    "name": "URL Shorteners",
+    "slug": "url-shorteners",
+    "count": 21,
+    "nokey": 10,
+    "path": "/api/v1/category/url-shorteners.json"
+  },
+  {
+    "name": "Vehicle",
+    "slug": "vehicle",
+    "count": 20,
+    "nokey": 10,
+    "path": "/api/v1/category/vehicle.json"
+  },
+  {
+    "name": "Video",
+    "slug": "video",
+    "count": 61,
+    "nokey": 31,
+    "path": "/api/v1/category/video.json"
+  },
+  {
+    "name": "Weather",
+    "slug": "weather",
+    "count": 45,
+    "nokey": 21,
+    "path": "/api/v1/category/weather.json"
+  }
+]

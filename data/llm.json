@@ -1,0 +1,156 @@
+[
+  {
+    "id": "google-ai-studio",
+    "platform": "Google AI Studio",
+    "models": ["gemini-2.5-flash", "gemini-2.5-pro(限量)", "gemini-2.0-flash"],
+    "free_quota": "Flash 系约 1500 req/天，Pro 系约 50 req/天",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "protocol": "openai-compatible",
+    "signup": "https://aistudio.google.com/apikey",
+    "card_required": false,
+    "region_note": "需可用网络环境"
+  },
+  {
+    "id": "groq",
+    "platform": "Groq",
+    "models": ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "qwen-2.5-32b", "deepseek-r1-distill-llama-70b"],
+    "free_quota": "约 30 req/min、14k tok/min、1000 req/天",
+    "base_url": "https://api.groq.com/openai/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://console.groq.com/keys",
+    "card_required": false,
+    "region_note": "推理速度最快的一档"
+  },
+  {
+    "id": "cerebras",
+    "platform": "Cerebras",
+    "models": ["llama-3.3-70b", "llama-3.1-8b", "qwen-3-32b"],
+    "free_quota": "100 万 tokens/天，约 30 req/min",
+    "base_url": "https://api.cerebras.ai/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://cloud.cerebras.ai/",
+    "card_required": false,
+    "region_note": "token 吞吐最高，适合长文"
+  },
+  {
+    "id": "openrouter",
+    "platform": "OpenRouter",
+    "models": ["deepseek/deepseek-r1:free", "meta-llama/llama-3.3-70b-instruct:free", "qwen/qwen-2.5-72b-instruct:free"],
+    "free_quota": "带 :free 后缀的模型永久免费，约 20 req/min、50 req/天(未充值)",
+    "base_url": "https://openrouter.ai/api/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://openrouter.ai/keys",
+    "card_required": false,
+    "region_note": "一个 key 通吃几十家，模型池最大"
+  },
+  {
+    "id": "mistral",
+    "platform": "Mistral La Plateforme",
+    "models": ["mistral-small-latest", "open-mistral-nemo", "codestral-latest"],
+    "free_quota": "免费实验层 1 req/s、500k tok/min、10 亿 tok/月",
+    "base_url": "https://api.mistral.ai/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://console.mistral.ai/api-keys/",
+    "card_required": false,
+    "region_note": "欧洲节点，Code 模型强"
+  },
+  {
+    "id": "github-models",
+    "platform": "GitHub Models",
+    "models": ["gpt-4o-mini", "gpt-4.1-mini", "llama-3.3-70b", "phi-4"],
+    "free_quota": "免费，按分钟/天限速（约 15 req/min、150 req/天）",
+    "base_url": "https://models.inference.ai.azure.com",
+    "protocol": "openai-compatible",
+    "signup": "https://github.com/settings/tokens (PAT 直接当 key)",
+    "card_required": false,
+    "region_note": "有 GitHub 账号就有一条 key"
+  },
+  {
+    "id": "cloudflare-workers-ai",
+    "platform": "Cloudflare Workers AI",
+    "models": ["@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct", "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b"],
+    "free_quota": "10000 neurons/天（约 100~300 次推理）",
+    "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run/",
+    "protocol": "cloudflare-native",
+    "signup": "https://dash.cloudflare.com/profile/api-tokens",
+    "card_required": false,
+    "region_note": "边缘部署，延迟低"
+  },
+  {
+    "id": "zhipu",
+    "platform": "智谱 GLM",
+    "models": ["glm-4-flash", "glm-4-flashx", "glm-z1-flash"],
+    "free_quota": "GLM-4-Flash / Z1-Flash 永久免费，并发有限",
+    "base_url": "https://open.bigmodel.cn/api/paas/v4",
+    "protocol": "openai-compatible",
+    "signup": "https://open.bigmodel.cn/usercenter/apikeys",
+    "card_required": false,
+    "region_note": "国内直连，中文最强免费档"
+  },
+  {
+    "id": "qianfan",
+    "platform": "百度千帆",
+    "models": ["ernie-speed-128k", "ernie-lite-8k", "ernie-tiny-8k"],
+    "free_quota": "ERNIE-Speed / Lite / Tiny 免费，有 RPM 限制",
+    "base_url": "https://qianfan.baidubce.com/v2",
+    "protocol": "openai-compatible",
+    "signup": "https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application",
+    "card_required": false,
+    "region_note": "国内直连"
+  },
+  {
+    "id": "dashscope",
+    "platform": "阿里百炼",
+    "models": ["qwen-turbo", "qwen-plus(新用户额度)", "qwen2.5-7b-instruct"],
+    "free_quota": "各模型独立新用户免费额度，qwen-turbo 约百万 token",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://bailian.console.aliyun.com/",
+    "card_required": false,
+    "region_note": "国内直连"
+  },
+  {
+    "id": "xfyun",
+    "platform": "讯飞星火",
+    "models": ["generalv3.5-lite", "spark-lite"],
+    "free_quota": "Spark Lite 永久免费",
+    "base_url": "https://spark-api-open.xf-yun.com/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://console.xfyun.cn/services/cbm",
+    "card_required": false,
+    "region_note": "国内直连"
+  },
+  {
+    "id": "siliconflow",
+    "platform": "硅基流动 SiliconFlow",
+    "models": ["Qwen/Qwen2.5-7B-Instruct", "THUDM/glm-4-9b-chat", "deepseek-ai/DeepSeek-V3"],
+    "free_quota": "注册送额度，多个小模型标价 0 元",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://cloud.siliconflow.cn/account/ak",
+    "card_required": false,
+    "region_note": "国内直连，聚合开源模型"
+  },
+  {
+    "id": "deepseek",
+    "platform": "DeepSeek",
+    "models": ["deepseek-chat", "deepseek-reasoner"],
+    "free_quota": "无免费层，但约 ¥1/百万 token，便宜到可当免费",
+    "base_url": "https://api.deepseek.com/v1",
+    "protocol": "openai-compatible",
+    "signup": "https://platform.deepseek.com/api_keys",
+    "card_required": true,
+    "region_note": "国内直连，性价比第一"
+  },
+  {
+    "id": "huggingface",
+    "platform": "HuggingFace Inference",
+    "models": ["任意社区模型"],
+    "free_quota": "免费额度，冷启动慢，可能排队",
+    "base_url": "https://api-inference.huggingface.co/models/",
+    "protocol": "hf-native",
+    "signup": "https://huggingface.co/settings/tokens",
+    "card_required": false,
+    "region_note": "试新模型首选"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "version": "v1",
+  "generated_at": "3a23fe557409",
+  "total": 2387,
+  "nokey": 1172,
+  "categories": 52,
+  "sources": [
+    {
+      "source": "public-apis",
+      "url": "https://raw.githubusercontent.com/public-apis/public-apis/master/README.md",
+      "parsed": 2391,
+      "ok": true
+    },
+    {
+      "source": "public-api-lists",
+      "url": "https://raw.githubusercontent.com/public-api-lists/public-api-lists/master/README.md",
+      "parsed": 0,
+      "ok": false,
+      "error": "offline mode, no cache: /workspace/free-api-hub/data/cache/public-api-lists.md"
+    }
+  ]
+}
