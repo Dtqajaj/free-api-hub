@@ -18,7 +18,7 @@ Actions 当定时任务服务器（每 6 小时自动抓取更新），raw 直�
 
 ## 端点
 
-站点根：`https://<user>.github.io/free-api-hub/`
+站点根：`https://dtqajaj.github.io/free-api-hub/`
 
 | 路径 | 内容 | 大小 |
 |---|---|---|
@@ -34,7 +34,7 @@ Actions 当定时任务服务器（每 6 小时自动抓取更新），raw 直�
 raw 直连（带 `Access-Control-Allow-Origin: *`，前端可直接 fetch）：
 
 ```
-https://raw.githubusercontent.com/<user>/free-api-hub/main/docs/api/v1/nokey.json
+https://raw.githubusercontent.com/Dtqajaj/free-api-hub/main/docs/api/v1/nokey.json
 ```
 
 ## 数据结构
@@ -60,14 +60,14 @@ https://raw.githubusercontent.com/<user>/free-api-hub/main/docs/api/v1/nokey.jso
 **1. 当静态数据源**
 
 ```bash
-curl https://<user>.github.io/free-api-hub/api/v1/nokey.json \
+curl https://dtqajaj.github.io/free-api-hub/api/v1/nokey.json \
   | jq -r '.[] | select(.category=="Weather") | .url'
 ```
 
 **2. 前端直接查**
 
 ```js
-const apis = await fetch('https://<user>.github.io/free-api-hub/api/v1/nokey.json').then(r=>r.json());
+const apis = await fetch('https://dtqajaj.github.io/free-api-hub/api/v1/nokey.json').then(r=>r.json());
 const weather = apis.filter(a => a.category === 'Weather' && a.cors === 'Yes');
 ```
 
@@ -84,7 +84,7 @@ export default {
     const nokey = u.searchParams.get('nokey') === '1';
     const limit = Math.min(parseInt(u.searchParams.get('limit') || '50'), 500);
 
-    const r = await fetch('https://<user>.github.io/free-api-hub/api/v1/apis.json',
+    const r = await fetch('https://dtqajaj.github.io/free-api-hub/api/v1/apis.json',
       { cf: { cacheTtl: 3600 } });
     let data = await r.json();
 
@@ -109,7 +109,7 @@ export default {
 免费额度 10 万请求/天，够用。之后就能这样调：
 
 ```
-GET https://<worker>.workers.dev/?q=weather&nokey=1&limit=10
+GET https://<你的worker名>.workers.dev/?q=weather&nokey=1&limit=10
 ```
 
 ## 本地运行
