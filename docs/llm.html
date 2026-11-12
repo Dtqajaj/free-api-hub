@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>免费 LLM 怎么用 · 10 分钟跑通</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--txt:#e6edf3;--dim:#8b949e;--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--err:#f85149}
+body{background:var(--bg);color:var(--txt);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;padding:0 0 80px}
+header{background:linear-gradient(180deg,#161b22,#0d1117);border-bottom:1px solid var(--line);padding:32px 20px 24px}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-size:24px;margin-bottom:6px}
+h1 span{color:var(--acc)}
+.sub{color:var(--dim);font-size:14px}
+h2{font-size:18px;margin:36px 0 12px;padding-left:10px;border-left:3px solid var(--acc)}
+h3{font-size:15px;margin:20px 0 8px;color:var(--acc)}
+p{color:#c9d1d9;margin:8px 0}
+code{background:#0b0f14;border:1px solid var(--line);border-radius:4px;padding:2px 6px;font:13px ui-monospace,Consolas,monospace;color:#79c0ff}
+pre{background:#0b0f14;border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:10px 0;position:relative}
+pre code{background:none;border:none;padding:0;color:#e6edf3;line-height:1.6;font-size:13px}
+.cp{position:absolute;top:8px;right:8px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:4px;font-size:11px;padding:3px 8px;cursor:pointer}
+.cp:hover{color:var(--ok);border-color:var(--ok)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:var(--panel);color:var(--dim);font-weight:600}
+td.ok{color:var(--ok)}
+td.no{color:var(--err)}
+.note{background:rgba(47,129,247,.08);border-left:3px solid var(--acc);padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;font-size:14px}
+.warn{background:rgba(210,153,34,.08);border-left:3px solid var(--warn)}
+.err{background:rgba(248,81,73,.08);border-left:3px solid var(--err)}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:14px 0}
+.step .n{display:inline-block;background:var(--acc);color:#fff;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;font-size:13px;font-weight:700;margin-right:8px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>免费 LLM <span>怎么用</span></h1>
+    <div class="sub">从零到跑通 10 分钟 · 连不上？先看第四节对照表</div>
+  </div>
+</header>
+<div class="wrap">
+
+<h2>一、30 秒跑通（推荐这条路）</h2>
+<p>国内直连、免翻墙、永久免费、注册不用绑卡。<b>智谱 GLM-4-Flash</b>。</p>
+
+<div class="step">
+  <div><span class="n">1</span><b>注册拿 key</b></div>
+  <p>打开 <a href="https://open.bigmodel.cn/usercenter/apikeys" target="_blank">open.bigmodel.cn</a> → 手机号注册 → API Keys → 新建 → 复制那串 key（形如 <code>xxxxxxxx.xxxxxxxx</code>，中间有个点，别漏）。</p>
+</div>
+
+<div class="step">
+  <div><span class="n">2</span><b>curl 直接测</b></div>
+<pre><code>curl https://open.bigmodel.cn/api/paas/v4/chat/completions \
+  -H "Authorization: Bearer 你的KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"glm-4-flash","messages":[{"role":"user","content":"说个笑话"}]}'</code><button class="cp">复制</button></pre>
+  <p>返回里有 <code>choices[0].message.content</code> 就是通了。报 401 是 key 错，400 是模型名写错。</p>
+</div>
+
+<div class="step">
+  <div><span class="n">3</span><b>Python 用起来</b></div>
+<pre><code>export ZHIPU_KEY=你的KEY
+python3 tools/llm.py "写一句诗" zhipu</code><button class="cp">复制</button></pre>
+  <p>或者代码里：</p>
+<pre><code>from llm import chat
+print(chat("写一句诗", platform="zhipu"))</code><button class="cp">复制</button></pre>
+</div>
+
+<h2>二、各平台对照表</h2>
+<table>
+<tr><th>平台</th><th>国内直连</th><th>免费额度</th><th>模型名（照抄）</th></tr>
+<tr><td>智谱 GLM</td><td class="ok">✅ 是</td><td>GLM-4-Flash 永久免费</td><td><code>glm-4-flash</code></td></tr>
+<tr><td>阿里百炼</td><td class="ok">✅ 是</td><td>新用户百万 token</td><td><code>qwen-turbo</code></td></tr>
+<tr><td>百度千帆</td><td class="ok">✅ 是</td><td>Speed/Lite 免费</td><td><code>ernie-speed-128k</code></td></tr>
+<tr><td>讯飞星火</td><td class="ok">✅ 是</td><td>Lite 永久免费</td><td><code>lite</code></td></tr>
+<tr><td>硅基流动</td><td class="ok">✅ 是</td><td>注册送额度</td><td><code>Qwen/Qwen2.5-7B-Instruct</code></td></tr>
+<tr><td>DeepSeek</td><td class="ok">✅ 是</td><td>无免费，¥1/百万tok</td><td><code>deepseek-chat</code></td></tr>
+<tr><td>Groq</td><td class="no">❌ 要代理</td><td>1000 req/天</td><td><code>llama-3.1-8b-instant</code></td></tr>
+<tr><td>Cerebras</td><td class="no">❌ 要代理</td><td>100 万 tok/天</td><td><code>llama3.1-8b</code></td></tr>
+<tr><td>OpenRouter</td><td class="no">❌ 要代理</td><td><code>:free</code> 模型免费</td><td><code>meta-llama/llama-3.2-3b-instruct:free</code></td></tr>
+<tr><td>Google AI Studio</td><td class="no">❌ 要代理</td><td>1500 req/天</td><td><code>gemini-2.0-flash</code></td></tr>
+<tr><td>Mistral</td><td class="no">❌ 要代理</td><td>1 req/s</td><td><code>open-mistral-nemo</code></td></tr>
+</table>
+
+<div class="note">
+<b>没梯子就从第一列四个里选。</b>智谱额度最大、文档最好；阿里通义中文强；讯飞 Lite 最稳；硅基流动模型最多。
+</div>
+
+<h2>三、base_url 全表（用 OpenAI SDK 时必填）</h2>
+<p>所有这些平台都能用同一个 OpenAI 客户端，<b>只改 base_url、key、model 三个值</b>。</p>
+<pre><code># 智谱
+base_url = "https://open.bigmodel.cn/api/paas/v4"
+# 阿里百炼
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+# 硅基流动
+base_url = "https://api.siliconflow.cn/v1"
+# 讯飞星火
+base_url = "https://spark-api-open.xf-yun.com/v1"
+# 百度千帆
+base_url = "https://qianfan.baidubce.com/v2"
+# DeepSeek
+base_url = "https://api.deepseek.com/v1"
+# Groq
+base_url = "https://api.groq.com/openai/v1"
+# Cerebras
+base_url = "https://api.cerebras.ai/v1"
+# OpenRouter
+base_url = "https://openrouter.ai/api/v1"</code><button class="cp">复制</button></pre>
+
+<h3>Python OpenAI SDK</h3>
+<pre><code>from openai import OpenAI
+
+client = OpenAI(
+    api_key="你的KEY",
+    base_url="https://open.bigmodel.cn/api/paas/v4",
+)
+r = client.chat.completions.create(
+    model="glm-4-flash",
+    messages=[{"role": "user", "content": "你好"}],
+)
+print(r.choices[0].message.content)</code><button class="cp">复制</button></pre>
+
+<h3>不装任何包（纯标准库）</h3>
+<pre><code>import json, urllib.request
+
+req = urllib.request.Request(
+    "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+    data=json.dumps({
+        "model": "glm-4-flash",
+        "messages": [{"role": "user", "content": "你好"}],
+    }).encode(),
+    headers={
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 你的KEY",
+    },
+)
+with urllib.request.urlopen(req, timeout=60) as r:
+    print(json.load(r)["choices"][0]["message"]["content"])</code><button class="cp">复制</button></pre>
+
+<h2>四、连不上？按错误码对症下药</h2>
+
+<div class="err note">
+<b>409 / <code>ConnectTimeout</code> / 请求一直转圈 / <code>getaddrinfo failed</code></b><br>
+不是 key 的问题，是网络到不了。你选了需要代理的那几家（Google / Groq / OpenRouter / Cerebras / Mistral）。
+<b>换国内直连的那四家</b>，或者开代理。先跑诊断确认：
+<pre><code>python3 tools/llm-test.py</code><button class="cp">复制</button></pre>
+</div>
+
+<div class="err note">
+<b>401 Unauthorized</b><br>
+key 错了。三个高频原因：<br>
+① key 前后带了空格或换行<br>
+② 智谱的 key 中间有个 <code>.</code>，复制时漏了<br>
+③ 请求头写成 <code>Authorization: 你的KEY</code>，少了 <code>Bearer </code>
+</div>
+
+<div class="err note">
+<b>404 Not Found</b><br>
+base_url 路径错了。最常见：直接把 <code>https://api.xxx.com</code> 当 base_url，少了 <code>/v1</code>。<br>
+也可能是模型名写错 —— 模型名必须<b>一字不差</b>，大小写敏感，带斜杠的（<code>Qwen/Qwen2.5-7B-Instruct</code>）不能漏前缀。
+</div>
+
+<div class="err note">
+<b>400 Bad Request</b><br>
+多半是模型名不存在。看一眼返回体的 <code>message</code> 字段，会直接告诉你哪个模型不存在。
+</div>
+
+<div class="err note">
+<b>429 Too Many Requests</b><br>
+限速或当日额度用完。免费层的限速都很低（Groq 约 30 req/min），加 <code>time.sleep(2)</code> 或换平台轮询。
+</div>
+
+<div class="err note">
+<b>402 / <code>Insufficient Balance</code></b><br>
+余额不足。DeepSeek 属于这种（它不是免费，是便宜）。
+</div>
+
+<h2>五、一键诊断</h2>
+<p>不确定卡在哪一环，跑这个，它会按 <b>网络 → 路由 → 鉴权 → 推理</b> 四层逐层告诉你断在哪。</p>
+<pre><code># 只测网络（不需要 key）
+python3 tools/llm-test.py
+
+# 带 key 全测
+python3 tools/llm-test.py --key 你的KEY --all
+
+# 只测某一家
+python3 tools/llm-test.py --id zhipu --key 你的KEY</code><button class="cp">复制</button></pre>
+
+<h2>六、拿这个索引当数据源</h2>
+<p>完整的免费 API 索引在 <a href="./">首页</a> 可以搜。JSON 直连：</p>
+<pre><code>https://dtqajaj.github.io/free-api-hub/api/v1/llm.json</code><button class="cp">复制</button></pre>
+
+<footer style="margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:13px">
+  <a href="./">← 返回 API 索引</a>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.cp').forEach(function(b){
+  b.onclick=function(){
+    var t=b.parentNode.querySelector('code').textContent;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent='已复制';setTimeout(function(){b.textContent='复制';},1200);
+    });
+  };
+});
+</script>
+</body>
+</html>
